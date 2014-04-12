@@ -1,3 +1,13 @@
+# Kannada - 2048
+Another clone of 2048! Variation includes the numbers being in Kannada.
+Further work: Need to convert the content-text on the page to kannada.
+
+
+
+Motivation:     Complete at least one course on Udacity. (Probably the smallest online course)Make a 2048.
+Original Readme continues ...
+
+
 # 2048
 A small clone of [1024](https://play.google.com/store/apps/details?id=com.veewo.a1024), based on [Saming's 2048](http://saming.fr/p/2048/) (also a clone).
 
