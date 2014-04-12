@@ -62,7 +62,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  inner.textContent = translateNumerals(tile.value,"kannada");
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -137,3 +137,26 @@ HTMLActuator.prototype.clearMessage = function () {
   this.messageContainer.classList.remove("game-won");
   this.messageContainer.classList.remove("game-over");
 };
+
+
+//Function to translate numbers into locale language
+function translateNumerals(input, target) {
+    var systems = {
+            devanagari: 2406, tamil: 3046, kannada:  3302, 
+            telugu: 3174, marathi: 2406, malayalam: 3430, 
+            oriya: 2918, gurmukhi: 2662, nagari: 2534, gujarati: 2790
+        },
+        zero = 48, // char code for Arabic zero
+        nine = 57, // char code for Arabic nine
+        offset = (systems[target.toLowerCase()] || zero) - zero,
+        output = input.toString().split(""),
+        i, l = output.length, cc;
+
+    for (i = 0; i < l; i++) {
+        cc = output[i].charCodeAt(0);
+        if (cc >= zero && cc <= nine) {
+            output[i] = String.fromCharCode(cc + offset);
+        }
+    }
+    return output.join("");
+}
