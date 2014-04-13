@@ -126,7 +126,8 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (won) {
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "You win!" : "Game over!";
+//  var message = won ? "You win!" : "Game over!";
+  var message = won ? "\u0CA8\u0CBF\u0CAE\u0CCD\u0CAE \u0C97\u0CC6\u0CB2\u0CC1\u0CB5\u0CC1 !" : "\u0C95\u0CC6\u0CC2\u0CA8\u0CC6\u0C97\u0CC6\u0CC2\u0C82\u0CA1\u0CBF\u0CA4\u0CC1 \u0C86\u0C9F";
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
